@@ -63,7 +63,6 @@ function showRedirect($linkid)
 			xhr.open(\'POST\', \'/jump.php\');
 			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			xhr.send(\'token=\'+encodeURIComponent(miner.getToken()));
-			xhr.send());
 		}
 	});
 
