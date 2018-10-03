@@ -14,23 +14,14 @@
             if (xhr.readyState === xhr.DONE) {
                 var now = Date.now();
                 var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid=" + xhr.responseText;
-                if (now - ts < 200) {
-                    var wait = 275 - (now - ts);
-                    setTimeout(function () {
-                        console.info("您的缩短后的URL为:"+ reurl);
-                        alert("您的缩短后的URL为:" + reurl);
-
-                    }, wait);
-                }
-                else {
-                    console.info("您的缩短后的URL为:"+ reurl);
-                    alert("您的缩短后的URL为:" + reurl);
-                }
+                console.info("您的URL为："+reurl);
+                alert("您的URL为："+reurl);
             }
         };
         xhr.open('POST', '/linkManager.php');
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send('type=' + encodeURIComponent('addlink') + '&arg=' + encodeURIComponent(url));
+
     }
 </script>
 <form id="form" name="form" action="linkManager.php" method="POST">
