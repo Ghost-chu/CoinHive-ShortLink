@@ -15,6 +15,7 @@
                 var now = Date.now();
                 var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid=" + xhr.responseText;
                 console.info("您的URL为："+reurl);
+                document.write("您的URL为："+reurl+"<br/>");
                 alert("您的URL为："+reurl);
             }
         };
