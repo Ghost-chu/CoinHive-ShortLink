@@ -4,7 +4,10 @@ require("config.php");
 require ("linkManager.php");
 $token = $_POST['token'];
 $linkid = $_POST['linkid'];
-echo($_POST);
+
+foreach ($_POST as $aa){
+    echo($aa."|");
+}
 echo ("linkid:".$linkid."<br/>");
 
 global $ch_secret_key, $ch_hasehs;
