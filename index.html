@@ -7,7 +7,7 @@
 <body>
 <script>
     function submitForm(url) {
-        print(url);
+        console.info(url);
         var xhr = new XMLHttpRequest();
         url = atob(url);
         xhr.onreadystatechange = function() {
