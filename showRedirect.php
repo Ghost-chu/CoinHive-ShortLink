@@ -23,9 +23,7 @@ function showRedirect($linkid)
 		数据获取失败. <strong>请禁用广告过滤或更换浏览器!</strong>
 	</div>
 
-	powered by <a href=\"https://coinhive.com/\">
-		<img src=\"/media/coinhive-icon.png\" class=\"icon\"/>
-		coinhive
+	Powered by CoinHive ShortLink Project
 	</a>
 </div>");
     echo('
