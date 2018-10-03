@@ -1,22 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>创建属于你自己的短链接！</title>
-    <script type="text/javascript" src="base64.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="base64.js"></script>
+  </head>
+  <body>
+<script>
+ Number.prototype.isInteger = function (global) {
+        var floor = Math.floor,
+            isFinite = global.isFinite;
+
+        Object.defineProperty(Number, 'isInteger', {
+            value: function isInteger(value) {
+                return typeof value === 'number' &&
+                    isFinite(value) &&
+                    floor(value) === value;
+            },
+            configurable: true,
+            enumerable: false,
+            writable: true
+        });
+    };
+</script>
+  
 <script>
     function submitForm(url) {
+	//Language Support
+	
+	var http = url.indexOf("http://");
+	var https = url.indexOf("https://");
+	var ed2k = url.indexOf("ed2k://");
+	var thunder = url.indexOf("thunder://");
+	var mail = url.indexOf("mail:");
+			if(url == ""){
+			alert("请输入URL地址!");
+			return;
+			}
+			if(http == -1 && https == -1 && ed2k == -1 && thunder == -1 && mail == -1){
+			alert("请输入正确的URL地址!");
+			return;
+			}
         var xhr = new XMLHttpRequest();
         url = Base64.encode(url);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === xhr.DONE) {
+                if(xhr.responseText == '-1'){
+					alert("服务器内部错误 请稍后重试并通知站点管理员!");
+					return;
+				}
+				if(Number.isInteger(xhr.responseText)==false){
+				alert("服务器内部错误 请稍后重试并通知站点管理员! 错误代码:"+xhr.responseText);
+				return;
+				}
                 var now = Date.now();
                 var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid=" + xhr.responseText;
                 console.info("您的URL为："+reurl);
                 document.write("您的URL为："+reurl+"<br/>");
-                alert("您的URL为："+reurl);
+
+                //Switch title
+                var nv = document.getElementById("enterURL");
+                nv.innerText("生成成功！ 请复制下方的链接！");
+                var box = document.getElementById("urlBox");
+                box.value=reurl;
+                alert("生成成功");
             }
         };
         xhr.open('POST', '/linkManager.php');
@@ -25,12 +81,58 @@
 
     }
 </script>
-<form id="form" name="form" action="linkManager.php" method="POST">
-    <span>请输入需要缩短(变长)的URL:</span><input type="text" name="urlBox" id="urlBox" value="http://www.baidu.com">
-    <button type="button" name="submitButton" href="javascript:void(0);" id="submitButton"
-            onclick="submitForm(document.getElementById('urlBox').value)">确定喵
-    </button>
-</form>
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="index.html">首页</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">最近生成的短链接(WIP)</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Somethings...</a>
+				</li>
+				<li class="nav-item dropdown ml-md-auto">
+					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">CoinHive ShortLink Service</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						 <a class="dropdown-item" href="#">About</a>
+						<div class="dropdown-divider">
+						</div> <a class="dropdown-item" href="#">Powered by RedstoneCraft Studio</a>
+					</div>
+				</li>
+			</ul>
+			<div class="jumbotron">
+				<h2>
+					CoinHive ShortLink Service
+				</h2>
+				<p>
+					缩短链接，并且使用CoinHive为自己创造收益
+				</p>
+			</div>
+			<form role="form">
+				<div class="form-group">
+					 
+					<label for="urlBox" id="enterURL">
+						请输入需要缩短的URL
+					</label>
+					<input type="text" class="form-control" name="urlBox" id="urlBox">
+				</div>
+				<button type="button" name="submitButton" id="submitButton" class="btn btn-primary" onclick="submitForm(document.getElementById('urlBox').value)">
+					生成短链接！
+				</button>
+			</form>
+			<p class="text-center text-info">
+				Powered by CoinHive ShortLink Service</br>
+				吉ICP备17007736号-2
+			</p>
+		</div>
+	</div>
+</div>
 
-</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
