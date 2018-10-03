@@ -1,4 +1,4 @@
-# CoinHive ShortLink API
+# CoinHive ShortLink
 Author: @Ghost_chu
 
 ## 安装：
