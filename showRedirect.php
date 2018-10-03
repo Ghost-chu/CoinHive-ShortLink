@@ -11,8 +11,8 @@ function showRedirect($linkid)
     echo("<link rel=\"stylesheet\" type=\"text/css\" href=\"./shortlink.css\"/>\n");
     echo("<script type=\"text/javascript\" src=\"".$ch_host."\"></script>");
     echo("<meta name=\"viewport\" content=\"width=400\"/>");
-    echo("</head>"); //HTML HEAD
-    echo("<div class=\"content\">
+    echo("</head>\n"); //HTML HEAD
+    echo("<div class=\"content\">\n
 	<h1>正在重定向 请稍后</h1>
 
 	<div class=\"progress-bar\">
