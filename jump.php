@@ -12,7 +12,7 @@ echo ("linkid:".$linkid."<br/>");
 
 global $ch_secret_key, $ch_hasehs;
 
-$verifyed = verify($ch_secret_key, $token, $ch_hashes, $linkid);
+$verifyed = verify( $token, $linkid);
 
 echo("Verify:".$verifyed."<br/>");
 
