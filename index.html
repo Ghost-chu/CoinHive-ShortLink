@@ -8,16 +8,18 @@
 <script>
     function submitForm(url) {
         var xhr = new XMLHttpRequest();
+        var base = new Base64();
+        url = base.encode(url);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === xhr.DONE){
                 var now = Date.now();
-                var url = JSON.parse(xhr.responseText).url;
+                var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid="+xhr.responseText;
                 if (now-ts < 200) {
                     var wait = 275 - (now-ts);
-                    setTimeout(function(){alert("您的缩短后的URL为:"+url);}, wait);
+                    setTimeout(function(){alert("您的缩短后的URL为:"+reurl);}, wait);
                 }
                 else {
-                    alert("您的缩短后的URL为:"+url);
+                    alert("您的缩短后的URL为:"+reurl);
                 }
             }
         };

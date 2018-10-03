@@ -1,6 +1,9 @@
 <?php
 require('config.php');
-showRedirect(1);
+$linkid = $_GET['linkid'];
+if($linkid!=null){
+    showRedirect($linkid);
+}
 function showRedirect($linkid)
 {
     global $ch_hasehs,$ch_public_key,$ch_host;
