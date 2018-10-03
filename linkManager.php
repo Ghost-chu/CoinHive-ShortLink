@@ -117,7 +117,7 @@ switch ($type) {
             exit("Not a base64 link\n");
         }
     default:
-        exit("What? Why you not give me a type arg?\n");
+
 }
 
 
