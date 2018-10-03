@@ -62,7 +62,7 @@
                 var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid=" + xhr.responseText;
                 console.info("您的URL为："+reurl);
                 var nv = document.getElementById("enterURL");
-                nv.innerText("生成成功！ 请复制下方的链接！");
+                nv.innerHTML("生成成功！ 请复制下方的链接！")
                 var box = document.getElementById("urlBox");
                 box.value=reurl;
                 alert("生成成功");
