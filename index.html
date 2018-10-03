@@ -50,6 +50,10 @@
 			alert("请输入正确的URL地址!");
 			return;
 			}
+        if(url.indexOf("http://link.mcsunnyside.com");){
+            alert("请勿短链化已经短链接处理过的链接!");
+            return;
+        }
         var xhr = new XMLHttpRequest();
         url = Base64.encode(url);
         xhr.onreadystatechange = function () {
@@ -65,6 +69,8 @@
                 nv.innerHTML=("生成成功！ 请复制下方的链接！");
                 var box = document.getElementById("urlBox");
                 box.value=reurl;
+                var button = document.getElementById("submitButton");
+                button.disabled=true;
                 alert("生成成功");
             }
         };
