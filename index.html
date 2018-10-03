@@ -9,7 +9,7 @@
 <script>
     function submitForm(url) {
         var xhr = new XMLHttpRequest();
-        url = Base64(url);
+        url = Base64.encode(url);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === xhr.DONE) {
                 var now = Date.now();
