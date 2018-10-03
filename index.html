@@ -54,6 +54,8 @@
             alert("请勿短链化已经短链接处理过的链接!");
             return;
         }
+        var button = document.getElementById("submitButton");
+        button.disabled = true;
         var xhr = new XMLHttpRequest();
         url = Base64.encode(url);
         xhr.onreadystatechange = function () {
@@ -66,14 +68,13 @@
                 var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid=" + xhr.responseText;
                 console.info("您的URL为：" + reurl);
                 var nv = document.getElementById("enterURL");
-                nv.innerHTML = ("生成成功！ 请复制下方的链接！");
+                nv.innerHTML = "生成成功！ 请复制下方的链接！";
                 var box = document.getElementById("urlBox");
                 box.value = reurl;
-                var button = document.getElementById("submitButton");
-                button.disabled = true;
                 alert("生成成功");
             }
         };
+        button.disabled = false;
         xhr.open('POST', '/linkManager.php');
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send('type=' + encodeURIComponent('addlink') + '&arg=' + encodeURIComponent(url));
