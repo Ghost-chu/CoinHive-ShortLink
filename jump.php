@@ -8,15 +8,18 @@ $linkid = $_POST['linkid'];
 global $ch_secret_key, $ch_hasehs;
 
 $verifyed = verify( $token, $linkid);
-
 if(!$verifyed){
-    exit ("Failed to verify");
+    jump("failed.html");
 }else{
     $url = getLink($linkid);
     if(url==-1) {
         http_response_code(404);
         exit("404 not found");
     }
-    header('location:'.base64_decode($url));
+    jump( base64_decode($url));
     exit();
+}
+function jump($url){
+    $result = array('url'=>$url);
+    exit($result);
 }
