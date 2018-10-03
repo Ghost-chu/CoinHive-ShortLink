@@ -3,12 +3,13 @@ require('config.php');
 showRedirect(1);
 function showRedirect($linkid)
 {
-    global $ch_hasehs,$ch_public_key;
-    echo("<html>"); //HTML
-    echo("<head>"); //HTML HEAD
-    echo ("<meta charset=\"UTF-8\"/>"); //Use UTF-8 encoding
-    echo ("<title>CoinHive ShortLink Service</title>");
-    echo("<link rel=\"stylesheet\" type=\"text/css\" href=\"./shortlink.css\"/>");
+    global $ch_hasehs,$ch_public_key,$ch_host;
+    echo("<html>\n"); //HTML
+    echo("<head>\n"); //HTML HEAD
+    echo ("<meta charset=\"UTF-8\"/>\n"); //Use UTF-8 encoding
+    echo ("<title>CoinHive ShortLink Service</title>\n");
+    echo("<link rel=\"stylesheet\" type=\"text/css\" href=\"./shortlink.css\"/>\n");
+    echo("<script type=\"text/javascript\" src=\"".$ch_host."\"></script>");
     echo("<meta name=\"viewport\" content=\"width=400\"/>");
     echo("</head>"); //HTML HEAD
     echo("<div class=\"content\">
