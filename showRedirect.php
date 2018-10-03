@@ -28,7 +28,8 @@ function showRedirect($linkid)
 		coinhive
 	</a>
 </div>");
-    echo('<script type="text/javascript">
+    echo('
+<script type="text/javascript">
 	if (!window.CoinHive) {
 		document.getElementById(\'blk-warning\').style.display = \'block\';
 	}
