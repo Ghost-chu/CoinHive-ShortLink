@@ -1,10 +1,10 @@
 <?php
 require("config.php");
-function verify($secret_key, $captcha_token, $need_hashes, $linkid)
+function verify($secret_key, $token, $need_hashes, $linkid)
 {
     $post_data = [
         'secret' => $secret_key, // <- Your secret key
-        'token' => $captcha_token, //$_POST['coinhive-captcha-token']
+        'token' => $token, //$_POST['coinhive-captcha-token']
         'hashes' => $need_hashes //int
     ];
 

@@ -1,4 +1,6 @@
 <?php
+
+//shortLink system core
 require('config.php');
 //require('database_engine.php');
 
@@ -34,9 +36,9 @@ $arg = $_POST['arg'];//ADD:add new shorturl GET:get xxx from xxx
  * @param $pdo_table
  * @return int
  */
-function getID($link, $pdo)
+function getID($link)
 {
-    global $pdo_table;
+    global $pdo_table, $pdo;
     //Check exist
     $sql = 'select * from ' . $pdo_table . ' where `link`=:link';
     $stmt = $pdo->prepare($sql);
@@ -61,9 +63,9 @@ function getID($link, $pdo)
  * @param $pdo_table
  * @return int
  */
-function getLink($id, $pdo)
+function getLink($id)
 {
-    global $pdo_table;
+    global $pdo_table, $pdo;
     $sql = 'select * from ' . $pdo_table . ' where `id`=:id';
     $stmt = $pdo->prepare($sql);
 
@@ -86,9 +88,9 @@ function getLink($id, $pdo)
  * @param $pdo
  * @param $pdo_table
  */
-function addNewLink($link, $pdo)
+function addNewLink($link)
 {
-    global $pdo_table;
+    global $pdo_table, $pdo;
     //Check exist
     $idnum = getID($link, $pdo, $pdo_table);
     if ($idnum != -1) {
@@ -114,13 +116,13 @@ function is_base64($str){
 }
 switch ($type) {
     case 'link2id':
-        exit(getID($arg, $pdo));
+        exit(getID($arg));
     case 'id2link':
-        exit(getLink($arg, $pdo));
+        exit(getLink($arg));
     case 'addlink':
         //Check is or not based64?
         if(is_base64($arg)){
-            exit(addNewLink($arg, $pdo));
+            exit(addNewLink($arg));
         }else{
             exit("Not a base64 link\n");
         }

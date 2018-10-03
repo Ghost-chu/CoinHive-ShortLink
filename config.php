@@ -25,20 +25,20 @@ $ch_host = 'https://authedmine.com/lib/captcha.min.js';
 // https://authedmine.com/lib/captcha.min.js (AdBlock Friendly)
 // https://coinhive.com/lib/captcha.min.js (Auto verify and mining in background support)
 
-$ch_enable_background_mining = true;
+//$ch_enable_background_mining = true;
 // Background mining need set $ch_host to https://authedmine.com/lib/captcha.min.js
 
-$ch_background_mining_free_percent = '0.6';
+//$ch_background_mining_free_percent = '0.6';
 // 0.6 = 60% cpu free(use 40%)   0.1 = 10% cpu free(use 90%)
 // Need switch $ch_enable_background_mining to true
 
-$ch_background_mining_disable_on_mobile = true;
+//$ch_background_mining_disable_on_mobile = true;
 //T urn on this maybe can improve mobile user experience, But possible user can use UA to disable background mining.
 // ==============================================================
 
 
-// ==================Captcha Page Configuration==================
+// =================Redirect Page Configurations=================
 
-// About mining page you can edit it by yourself in showCaptcha.php
+// About mining page you can edit it by yourself in showRedirect.php
 
 // ==============================================================

@@ -22,6 +22,8 @@ function install()
     $stmt->execute();
     $stmt = $pdo->prepare($sql2);
     $stmt->execute();
+
+    $stmt->
     fclose($lockf);
     exit ("Executed! Check your database to confirm install yes or not successfully");
 }
