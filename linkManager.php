@@ -1,7 +1,7 @@
 <?php
 
 //shortLink system core
-require('config.php');
+require('config.php.example');
 require ("SQLDriver.php");
 //require('database_engine.php');
 
