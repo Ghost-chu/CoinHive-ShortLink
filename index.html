@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>创建属于你自己的短链接！</title>
+    <script type="text/javascript" src="base64.js"></script>
 </head>
 <body>
 <script>
     function submitForm(url) {
-        console.info(url);
         var xhr = new XMLHttpRequest();
-        url = self.atob(url);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === xhr.DONE){
+        url = Base64(url);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === xhr.DONE) {
                 var now = Date.now();
-                var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid="+xhr.responseText;
-                if (now-ts < 200) {
-                    var wait = 275 - (now-ts);
-                    setTimeout(function(){alert("您的缩短后的URL为:"+reurl);}, wait);
+                var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid=" + xhr.responseText;
+                if (now - ts < 200) {
+                    var wait = 275 - (now - ts);
+                    setTimeout(function () {
+                        console.info("您的缩短后的URL为:"+ reurl);
+                        alert("您的缩短后的URL为:" + reurl);
+
+                    }, wait);
                 }
                 else {
-                    alert("您的缩短后的URL为:"+reurl);
+                    console.info("您的缩短后的URL为:"+ reurl);
+                    alert("您的缩短后的URL为:" + reurl);
                 }
             }
         };
         xhr.open('POST', '/linkManager.php');
-        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xhr.send('type='+encodeURIComponent('addlink')+'&arg='+encodeURIComponent(url));
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send('type=' + encodeURIComponent('addlink') + '&arg=' + encodeURIComponent(url));
     }
 </script>
 <form id="form" name="form" action="linkManager.php" method="POST">
     <span>请输入需要缩短(变长)的URL:</span><input type="text" name="urlBox" id="urlBox" value="http://www.baidu.com">
-    <button type="button" name="submitButton" href="javascript:void(0);" id="submitButton" onclick="submitForm(document.getElementById('urlBox').value)">确定喵</button>
+    <button type="button" name="submitButton" href="javascript:void(0);" id="submitButton"
+            onclick="submitForm(document.getElementById('urlBox').value)">确定喵
+    </button>
 </form>
 
 </body>
