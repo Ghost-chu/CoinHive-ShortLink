@@ -4,22 +4,13 @@
 require('config.php');
 require ("SQLDriver.php");
 //require('database_engine.php');
+$type = $_POST['type'];
+$arg = $_POST['arg'];//ADD:add new shorturl GET:get xxx from xxx
 
 $pdo = getPDO();
 if($pdo == null){
     die('Could not connect to the database:<br/>Please contact server administrators.<br/>' . $e);
 }
-
-//Success to connect database
-
-//Type should is: link2id id2link or addlink
-$type = $_POST['type'];
-$arg = $_POST['arg'];//ADD:add new shorturl GET:get xxx from xxx
-
-//debuging
-
-//BASE64ED
-
 /**
  * @param $link //Must base64 strings
  * @param $pdo
@@ -106,10 +97,19 @@ function is_base64($str){
 }
 switch ($type) {
     case 'link2id':
+        if($type==null || $type=="" ||$arg==null||$arg==""){
+            exit("No enough args.");
+        }
         exit(getID($arg));
     case 'id2link':
+        if($type==null || $type=="" ||$arg==null||$arg==""){
+            exit("No enough args.");
+        }
         exit(getLink($arg));
     case 'addlink':
+        if($type==null || $type=="" ||$arg==null||$arg==""){
+            exit("No enough args.");
+        }
         //Check is or not based64?
         if(is_base64($arg)){
             exit(addNewLink($arg));
