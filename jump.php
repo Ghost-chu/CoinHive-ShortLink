@@ -5,16 +5,9 @@ require ("linkManager.php");
 $token = $_POST['token'];
 $linkid = $_POST['linkid'];
 
-foreach ($_POST as $aa){
-    echo($aa."|");
-}
-echo ("linkid:".$linkid."<br/>");
-
 global $ch_secret_key, $ch_hasehs;
 
 $verifyed = verify( $token, $linkid);
-
-echo("Verify:".$verifyed."<br/>");
 
 if(!$verifyed){
     exit ("Failed to verify");
@@ -24,6 +17,6 @@ if(!$verifyed){
         http_response_code(404);
         exit("404 not found");
     }
-    header(base64_decode($url)); //Decode
+    header('location:'.base64_decode($url));
     exit();
 }
