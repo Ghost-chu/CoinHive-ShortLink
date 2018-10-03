@@ -5,14 +5,13 @@ require ("linkManager.php");
 $token = $_POST['token'];
 $linkid = $_POST['linkid'];
 
-echo("token:".$token."\n");
-echo ("linkid:".$linkid."\n");
+echo ("linkid:".$linkid."<br/>");
 
 global $ch_secret_key, $ch_hasehs;
 
 $verifyed = verify($ch_secret_key, $token, $ch_hashes, $linkid);
 
-echo("Verify:".$verifyed."\n");
+echo("Verify:".$verifyed."<br/>");
 
 if(!$verifyed){
     exit ("Failed to verify");
