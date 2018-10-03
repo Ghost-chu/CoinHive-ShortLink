@@ -16,10 +16,10 @@ if(!$verifyed){
         http_response_code(404);
         exit("404 not found");
     }
-    jump( base64_decode($url));
+    jump(base64_decode($url));
     exit();
 }
 function jump($url){
     $result = array('url'=>$url);
-    exit($result);
+    exit(json_encode($result));
 }
