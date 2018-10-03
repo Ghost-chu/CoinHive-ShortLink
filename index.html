@@ -36,7 +36,7 @@
 <script>
     function submitForm(url) {
         //Language Support
-
+        var button = document.getElementById("submitButton");
         var http = url.indexOf("http://");
         var https = url.indexOf("https://");
         var ed2k = url.indexOf("ed2k://");
@@ -44,17 +44,19 @@
         var mail = url.indexOf("mail:");
         if (url == "") {
             alert("请输入URL地址!");
+            button.disabled = false;
             return;
         }
         if (http == -1 && https == -1 && ed2k == -1 && thunder == -1 && mail == -1) {
             alert("请输入正确的URL地址!");
+            button.disabled = false;
             return;
         }
         if (url.indexOf("http://link.mcsunnyside.com")!=-1) {
             alert("请勿短链化已经短链接处理过的链接!");
+            button.disabled = false;
             return;
         }
-        var button = document.getElementById("submitButton");
         button.disabled = true;
         var xhr = new XMLHttpRequest();
         url = Base64.encode(url);
@@ -62,6 +64,7 @@
             if (xhr.readyState === xhr.DONE) {
                 if (xhr.responseText == '-1') {
                     alert("服务器内部错误 请稍后重试并通知站点管理员!");
+                    button.disabled = false;
                     return;
                 }
                 var now = Date.now();
