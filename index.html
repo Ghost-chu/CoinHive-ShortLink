@@ -5,11 +5,6 @@
     <title>创建属于你自己的短链接！</title>
 </head>
 <body>
-<form id="form" name="form" action="linkManager.php" method="POST">
-    <span>请输入需要缩短(变长)的URL:</span><input type="text" name="url" id="url" value="http://www.baidu.com">
-    <button type="button" name="submit" id="submit" onclick="javascript:submit(document.getElementById('url').value)">确定喵</button>
-</form>
-
 <script>
     function submit(url) {
         var xhr = new XMLHttpRequest();
@@ -31,7 +26,10 @@
         xhr.send('type='+encodeURIComponent('addlink')+'&arg='+encodeURIComponent(url));
     }
 </script>
-
+<form id="form" name="form" action="linkManager.php" method="POST">
+    <span>请输入需要缩短(变长)的URL:</span><input type="text" name="url" id="url" value="http://www.baidu.com">
+    <button type="button" name="submit" id="submit" onclick="javascript:submit(document.getElementById('url').value)">确定喵</button>
+</form>
 
 </body>
 </html>
