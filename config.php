@@ -1,18 +1,23 @@
 <?php
 // ====================Database Configuration====================
-$pdo_dsn = 'mysql:dbname=shortlink;host=ns0.nide8.com;port=30330';
+$pdo_database = 'shortlink';
+$pdo_host = 'localhost';
+$pdo_port = 3306;
 $pdo_user = 'root';
-$pdo_pass = 'sunnyside666';
+$pdo_pass = '123456';
 //Links table
 $pdo_table = 'links';
 $pdo_cookies_table = 'cookies';
 $pdo_stats_table = 'stats';
+
+//Do not touch pdo_dsn
+$pdo_dsn = 'mysql:dbname='.$pdo_database.';host='.$pdo_host.';port='.$pdo_port;
 // ==============================================================
 
 
 // ====================Coinhive Configuration====================
-$ch_public_key = 'pl4XkAHMYAxFz1ydCUaqHR5entiVZW0e'; // Your site public key
-$ch_secret_key = '8U1ilzV9ZjEpb2sDNsTlaOpn8x8XkZ2i'; // Your site secret key
+$ch_public_key = ''; // Your site public key
+$ch_secret_key = ''; // Your site secret key
 $ch_hasehs = 1024; // How many hashes allow users passed captcha? Min:256
 
 $ch_host = 'https://authedmine.com/lib/captcha.min.js';
