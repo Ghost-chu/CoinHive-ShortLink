@@ -40,10 +40,10 @@ GET `showRedirect.php?linkid={linkid}`
 访问后参数传递到`showRedirect.php`展示Redirecting页面  
 Redirecting挖矿结束后，数据POST到`jump.php`  
 调用verifyCoinHive对矿池结果验证  
-**未通过：**输出`Failed to verify`  
+**未通过：** 输出`Failed to verify`  
 索引数据库数据，检查是否存在 , 并取出linkid对应的link  
-**不存在：**输出`404 not found`并返回`HTTP 404`状态码  
-**存在：**解码link并header到目标站点  
+**不存在：** 输出`404 not found`并返回`HTTP 404`状态码  
+**存在：** 解码link并header到目标站点  
 
 ## TODO:
 1.  前端页面
