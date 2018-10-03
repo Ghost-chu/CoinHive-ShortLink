@@ -58,10 +58,6 @@
 					alert("服务器内部错误 请稍后重试并通知站点管理员!");
 					return;
 				}
-				if(Number.isInteger(xhr.responseText)==false){
-				alert("服务器内部错误 请稍后重试并通知站点管理员! 错误代码:"+xhr.responseText);
-				return;
-				}
                 var now = Date.now();
                 var reurl = "http://link.mcsunnyside.com/showRedirect.php?linkid=" + xhr.responseText;
                 console.info("您的URL为："+reurl);
