@@ -1,6 +1,10 @@
 # CoinHive ShortLink API
 Author: @Ghost_chu
 
+## 安装：
+
+查看Github的WIKI章节 [Setup](https://github.com/Ghost-chu/CoinHive-ShortLink/wiki/Setup)
+
 ## 添加短链接：
 POST `linkManager.php`  
 ### 参数：
