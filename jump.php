@@ -9,7 +9,7 @@ global $ch_secret_key, $ch_hasehs;
 
 $verifyed = verify( $token, $linkid);
 if(!$verifyed){
-    jump("failed.html");
+    jump("error.html");
 }else{
     $url = getLink($linkid);
     if(url==-1) {
