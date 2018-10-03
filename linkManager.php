@@ -2,23 +2,13 @@
 
 //shortLink system core
 require('config.php');
+require ("SQLDriver.php");
 //require('database_engine.php');
 
-if($type!=null){
-    try {
-        $pdo = new PDO($pdo_dsn, $pdo_user, $pdo_pass);
-    } catch (PDOException $e) {
-        $pdo = null;
-        die('Could not connect to the database:<br/>Please contact server administrators.<br/>' . $e);
-    }
-    if ($pdo == null) {
-        die('Could not connect to the database:<br/>Please contact server administrators.<br/>' . $e);
-    }
-}else{
-    $pdo=null;
-    exit("API error.");
+$pdo = getPDO();
+if($pdo == null){
+    die('Could not connect to the database:<br/>Please contact server administrators.<br/>' . $e);
 }
-
 
 //Success to connect database
 

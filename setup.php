@@ -10,10 +10,9 @@ function install()
 {
     $lockf = fopen("setup.lock", "w") or install();
     global $pdo_table, $pdo_stats_table, $lock, $pdo_dsn, $pdo_user, $pdo_pass;
-    try {
-        $pdo = new PDO($pdo_dsn, $pdo_user, $pdo_pass);
-    } catch (PDOException $e) {
-        die('Could not connect to the database:<br/>Setup failed.<br/>' . $e);
+    $pdo = getPDO();
+    if($pdo == null){
+        die('Could not connect to the database:<br/>Please contact server administrators.<br/>' . $e);
     }
     $sql = "CREATE TABLE `" . $pdo_table . "`. ( `id` INT NOT NULL AUTO_INCREMENT , `link` TEXT(65535) NOT NULL , `time` INT NOT NULL , `ip` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 //$sql2 = "CREATE TABLE `".$pdo_cookies_table."`. ( `id` INT NOT NULL AUTO_INCREMENT , `cookies` TEXT(65535) NOT NULL , `time` INT NOT NULL , `ip` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";

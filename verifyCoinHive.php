@@ -30,23 +30,15 @@ function verify($secret_key, $token, $need_hashes, $linkid)
 
 function addstats($linkid)
 {
-    global $pdo_dsn, $pdo_user, $pdo_pass, $pdo_stats_table;
-    try {
-        $pdo = new PDO($pdo_dsn, $pdo_user, $pdo_pass);
-    } catch (PDOException $e) {
-        echo "fail";
-    }
+    global $pdo_stats_table;
+    $pdo = getPDO();
     if ($pdo == null) {
-        echo "fail";
+        return true;
     }
-
-    $sql ='INSERT INTO '. $pdo_stats_table . ' (linkid, total) VALUES (:linkid, 1) ON DUPLICATE KEY UPDATE total = total + 1;';
-    //$sql = 'insert into on duplicate key `' . $pdo_stats_table . '` (`linkid`,`total`) VALUES (:linkid,total + 1);';
+    $sql = 'INSERT INTO ' . $pdo_stats_table . ' (linkid, total) VALUES (:linkid, 1) ON DUPLICATE KEY UPDATE total = total + 1;';
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam("linkid", $linkid);
     $stmt->execute();
-    $insertid = $pdo->lastInsertId();
-    echo($insertid);
     return true;
 }
 
