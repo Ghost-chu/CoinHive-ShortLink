@@ -1,5 +1,5 @@
 <?php
-require("config.php.example");
+require("config.php");
 
 function getPDO(){
     global $pdo_dsn,$pdo_user,$pdo_pass;

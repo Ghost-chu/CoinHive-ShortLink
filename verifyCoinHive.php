@@ -1,5 +1,5 @@
 <?php
-require("config.php.example");
+require("config.php");
 function verify($secret_key, $token, $need_hashes, $linkid)
 {
     $post_data = [

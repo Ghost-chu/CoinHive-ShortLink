@@ -1,5 +1,5 @@
 <?php
-require('config.php.example');
+require('config.php');
 
 $lock = fopen("setup.lock", "r") or install();
 fclose($lock);

@@ -1,6 +1,6 @@
 <?php
 require ("verifyCoinHive.php");
-require("config.php.example");
+require("config.php");
 require ("linkManager.php");
 $token = $_POST['token'];
 $linkid = $_POST['linkid'];

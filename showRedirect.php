@@ -1,5 +1,5 @@
 <?php
-require('config.php.example');
+require('config.php');
 showRedirect(1);
 function showRedirect($linkid)
 {
