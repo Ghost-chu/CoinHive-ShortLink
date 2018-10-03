@@ -9,7 +9,7 @@
     function submitForm(url) {
         console.info(url);
         var xhr = new XMLHttpRequest();
-        url = atob(url);
+        url = self.atob(url);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === xhr.DONE){
                 var now = Date.now();
