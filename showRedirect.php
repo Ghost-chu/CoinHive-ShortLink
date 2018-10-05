@@ -15,6 +15,7 @@ function showRedirect($linkid)
     echo("<script type=\"text/javascript\" src=\"".$ch_host."\"></script>");
     echo("<meta name=\"viewport\" content=\"width=400\"/>");
     echo("</head>\n"); //HTML HEAD
+    echo("<meta name=\"generator\" content=\"CoinHive ShortLink Project\" />"); //Do not remove this pls...
     echo("<div class=\"content\">\n
 	<h1>正在重定向 请稍后</h1>
 	<div class=\"progress-bar\">

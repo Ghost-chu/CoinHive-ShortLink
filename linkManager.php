@@ -8,6 +8,7 @@ $type = $_POST['type'];
 $arg = $_POST['arg'];//ADD:add new shorturl GET:get xxx from xxx
 
 $pdo = getPDO();
+
 if($pdo == null){
     die('Could not connect to the database:<br/>Please contact server administrators.<br/>' . $e);
 }

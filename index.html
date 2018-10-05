@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!-- Powered by CoinHive ShortLink, Do not remove this copyright thanks -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,23 +15,6 @@
     <script type="text/javascript" src="base64.js"></script>
 </head>
 <body>
-<script>
-    Number.prototype.isInteger = function (global) {
-        var floor = Math.floor,
-            isFinite = global.isFinite;
-
-        Object.defineProperty(Number, 'isInteger', {
-            value: function isInteger(value) {
-                return typeof value === 'number' &&
-                    isFinite(value) &&
-                    floor(value) === value;
-            },
-            configurable: true,
-            enumerable: false,
-            writable: true
-        });
-    };
-</script>
 
 <script>
     function submitForm(url) {
@@ -143,5 +125,4 @@
 <script src="js/scripts.js"></script>
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> <!-- Remove this line to disable Hitokoto -->
 </body>
-<!-- Powered by CoinHive ShortLink, Do not remove this copyright thanks -->
 </html>
