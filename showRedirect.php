@@ -17,7 +17,6 @@ function showRedirect($linkid)
     echo("</head>\n"); //HTML HEAD
     echo("<div class=\"content\">\n
 	<h1>正在重定向 请稍后</h1>
-
 	<div class=\"progress-bar\">
 		<div id=\"progress\"></div>
 	</div>

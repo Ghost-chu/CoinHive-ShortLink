@@ -7,10 +7,9 @@ $pdo_user = 'root';
 $pdo_pass = '123456';
 // Links table
 $pdo_table = 'links';
-$pdo_cookies_table = 'cookies';
-$pdo_stats_table = 'stats';
 //Do not touch pdo_dsn
-$pdo_dsn = 'mysql:dbname='.$pdo_database.';host='.$pdo_host.';port='.$pdo_port;
+$pdo_dsn = 'mysql:dbname='.$pdo_database.';host='.$pdo_host.';port='.$pdo_port; //Do not touch pdo_dsn
+//Do not touch pdo_dsn
 // ==============================================================
 
 

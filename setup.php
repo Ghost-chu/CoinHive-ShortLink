@@ -16,12 +16,8 @@ function install()
     }
     $sql = "CREATE TABLE `" . $pdo_table . "`. ( `id` INT NOT NULL AUTO_INCREMENT , `link` TEXT(65535) NOT NULL , `time` INT NOT NULL , `ip` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 //$sql2 = "CREATE TABLE `".$pdo_cookies_table."`. ( `id` INT NOT NULL AUTO_INCREMENT , `cookies` TEXT(65535) NOT NULL , `time` INT NOT NULL , `ip` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
-    $sql2 = "CREATE TABLE `" . $pdo_stats_table . "`. ( `linkid` INT NOT NULL AUTO_INCREMENT , `total` BIGINT NOT NULL , PRIMARY KEY (`linkid`)) ENGINE = InnoDB;";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    $stmt = $pdo->prepare($sql2);
-    $stmt->execute();
-
     $stmt->
     fclose($lockf);
     exit ("Executed! Check your database to confirm install yes or not successfully");
